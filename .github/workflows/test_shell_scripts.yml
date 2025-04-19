@@ -1,0 +1,20 @@
+name: PR - Add Two Numbers on HARIII
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+jobs:
+  add-numbers:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x ./scripts/my-script.sh 
+
+      - name: Run the shell script
+        run: ./scripts/my-script.sh  #
