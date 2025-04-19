@@ -1,0 +1,14 @@
+name: Test HARIII
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-run:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - name: Print OS Info
+        run: |
+          echo "Hello from HARIII!"
+          systeminfo
