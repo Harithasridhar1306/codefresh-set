@@ -1,4 +1,4 @@
-name: PR - Add Two Numbers on HARIII
+name: PR - Run Shell Script on HARIII
 
 on:
   pull_request:
@@ -7,14 +7,20 @@ on:
 
 jobs:
   add-numbers:
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: [self-hosted, Windows, X64]  
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Make script executable
+      - name: Ensure script is executable
         run: chmod +x ./shell-scripts/test-add.sh 
+
+      - name: Verify script permissions
+        run: ls -l ./shell-scripts/test-add.sh  
 
       - name: Run the shell script
         run: ./shell-scripts/test-add.sh 
+
+      - name: Verify script output
+        run: cat ./shell-scripts/test-add.sh  
