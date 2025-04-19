@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Make script executable
-        run: chmod +x ./shell-scripts/my-script.sh 
+        run: chmod +x ./shell-scripts/test-add.sh 
 
       - name: Run the shell script
-        run: ./scripts/my-script.sh  #
+        run: ./shell-scripts/test-add.sh 
